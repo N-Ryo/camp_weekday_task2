@@ -1,4 +1,5 @@
 # 課題2-1 speed_upメソッドの修正
+# 課題2-2 TrackCarクラスの実装
 
 class Car
   # 定数を追加
@@ -47,5 +48,16 @@ class Car
 
   def self.count
     @@count  # return @@countの略
+  end
+end
+
+class TrackCar < Car
+#2-2 TrackCarクラスにload_weightというアクセサメソッド(ゲッター)を追加して下さい。
+  attr_reader :load_weight
+#2-2 initializeメソッドを実装して下さい。引数はnumber、color、load_weightです。
+#2-2 TrackCarのインスタンスを生成する際、
+#2-2 load_weightを指定しない場合、 デフォルトで500になるようにデフォルト引数を設定して下さい。
+  def initialize(number, color, load_weight=500)
+    @load_weight = load_weight
   end
 end
