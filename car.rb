@@ -1,13 +1,17 @@
 # 課題2-1 speed_upメソッドの修正
 # 課題2-2 TrackCarクラスの実装
+# 課題2-3 passangers要素の追加と実装
 
 class Car
   # 定数を追加
   UP_SPEED = 10
   DOWN_SPEED = 20
+  #2-3 CarクラスにMAX_PASSENGERSという定数を定義して下さい。定数値は4です。
+  MAX_PASSENGERS = 4
 
   @@count = 0
-  attr_accessor :number, :color
+  #2-3 Carクラスにpassengersというアクセサメソッド(ゲッター/セッター)を追加して下さい。
+  attr_accessor :number, :color, :passengers
   # speedは外部から設定しないのでreaderで定義
   # @speedが使えるようになる
   attr_reader :speed
@@ -17,6 +21,8 @@ class Car
     @color = color
     # @speedを初期化
     @speed = 0
+    #2-3 Carクラスのインスタンス生成時に、passengersに1を追加(運転手を追加)して下さい。
+    @passengers = 1
     @@count += 1
   end
 
@@ -46,6 +52,19 @@ class Car
              end
   end
 
+  #2-3 Carクラスにget_onメソッド(インスタンスメソッド)を定義して下さい。
+  def get_on
+    #2-3 passengersがMAX_PASSENGERS以上になる場合、
+    #2-3 乗車できません。この車の最大乗車人数は4人です。という出力をし、passengersに追加しない。(1人も乗客を追加しない。)
+    if @passengers >= MAX_PASSENGERS
+      puts "乗車できません。この車の最大乗車人数は#{MAX_PASSENGERS}人です。"
+    else
+      #2-3 passengersに1を追加し(1人乗客を追加)し、乗車しました。という出力をする。
+      @passengers += 1
+      puts "乗車しました。"
+    end
+  end
+  
   def self.count
     @@count  # return @@countの略
   end
