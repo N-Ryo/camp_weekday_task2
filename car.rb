@@ -34,7 +34,7 @@ class Car
     #2-1   [ALERT]スピードが50になりました。減速します。
     if @speed >= 50
       puts "[ALERT]スピードが#{@speed}になりました。減速します。"
-      self.speed_down
+      speed_down
 
     #2-1  Carクラスのspeedが30以上になった場合、以下のアラートを出します。
     #2-1   [ALERT]スピードが30になりました。
@@ -84,6 +84,8 @@ class TrackCar < Car
 #2-2 TrackCarのインスタンスを生成する際、
 #2-2 load_weightを指定しない場合、 デフォルトで500になるようにデフォルト引数を設定して下さい。
   def initialize(number, color, load_weight=500)
+    # TrackCarクラスでもnumber,colorが使えるようにCarクラスのinitializeメソッドを継承する。
+    super number, color
     @load_weight = load_weight
   end
 end

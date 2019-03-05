@@ -17,7 +17,7 @@ end
 class Dog < Animal
   def initialize(name)
     # 親クラスのnameの定義を継承する
-    super name
+    super
     # cryメソッドのvioceの呼び出す値を変更する
     @voice = "ワンワン"
   end
@@ -27,7 +27,7 @@ end
 class Cat < Animal
   def initialize(name)
     # 親クラスのnameの定義を継承する
-    super name
+    super
     # cryメソッドのvioceの呼び出す値を変更する
     @voice = "ニャー"
   end
