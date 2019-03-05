@@ -1,6 +1,7 @@
 # 課題2-1 speed_upメソッドの修正
 # 課題2-2 TrackCarクラスの実装
 # 課題2-3 passangers要素の追加と実装
+# 課題2-4 count_infoメソッドの追加と実装
 
 class Car
   # 定数を追加
@@ -65,6 +66,12 @@ class Car
     end
   end
   
+  #2-4 Carクラスにcount_infoというクラスメソッドを追加して下さい。
+  def self.count_info
+    #2-4 Carクラスのクラス変数@@countは#{Carクラスのクラス変数@@count}です。のようにクラス変数@@countを表示できる。
+    "Carクラスのクラス変数@@countは#{@@count}です。"
+  end
+
   def self.count
     @@count  # return @@countの略
   end
