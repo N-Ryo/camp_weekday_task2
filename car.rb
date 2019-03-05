@@ -1,3 +1,5 @@
+# 課題2-1 speed_upメソッドの修正
+
 class Car
   # 定数を追加
   UP_SPEED = 10
@@ -20,6 +22,17 @@ class Car
   # 加速用のメソッド追加
   def speed_up
     @speed += UP_SPEED
+    #2-1  Carクラスのspeedが50以上になった場合、以下の減速アラートを出し、speed_downメソッドを使用して減速します。
+    #2-1   [ALERT]スピードが50になりました。減速します。
+    if @speed >= 50
+      puts "[ALERT]スピードが#{@speed}になりました。減速します。"
+      self.speed_down
+
+    #2-1  Carクラスのspeedが30以上になった場合、以下のアラートを出します。
+    #2-1   [ALERT]スピードが30になりました。
+    elsif @speed >= 30
+      puts "[ALERT]スピードが#{@speed}になりました。"
+    end
   end
 
   # 減速用のメソッド追加
